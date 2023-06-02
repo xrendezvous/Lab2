@@ -1,17 +1,26 @@
-body{
+body {
 	background-color: lightgray;
 }
 
-.block-right {
-	min-width: 120px;
-	background-color: white;
-	display: inline-block;
+.block-left {
 	width: 40%;
-	height: auto;
+	background-color: white;
 	border-radius: 10px;
+	float: left;
+	clear: both;
 }
 
-.title-remain {
+.block-right {
+	width: 40%;
+	background-color: white;
+	border-radius: 10px;
+	float: left;
+	margin-left: 900px;
+	margin-top: -400px;
+}
+
+.title-remain,
+.title-bought {
 	font-size: 20px;
 	font-weight: 700;
 	padding: 13px;
@@ -20,8 +29,6 @@ body{
 
 .container-right {
 	background-color: white;
-	width: auto;
-	height: auto;
 	border-radius: 1px;
 	padding: 13px;
 	border-bottom: 1px solid #000000;
@@ -30,22 +37,12 @@ body{
 .product-icon {
 	background-color: #e8e8e8;
 	font-size: 15px;
-	width: auto;
 	border-radius: 5px;
-	display: inline-block;
 	padding: 5px;
 	margin-bottom: 5px;
 }
 
-.icon-product-amount {
-	background-color: #FF8C00;
-	border-radius: 10px;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-	text-align: center;
-}
-
+.icon-product-amount,
 .icon-product-amount-bought {
 	background-color: #FF8C00;
 	border-radius: 10px;
@@ -55,10 +52,117 @@ body{
 	text-align: center;
 }
 
-.title-bought {
-	font-size: 20px;
-	font-weight: 700;
-	padding: 13px;
-	border-bottom: 1px solid #000000;
+.add-product {
+	display: flex;
+	align-items: center;
+}
+
+.product-name {
+	margin-right: 10px;
+}
+
+.adding-product {
+	background-color: blue;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 5px 10px;
+	box-shadow: 2px 2px 2px lightgray;
+}
+
+.count-display {
+	background-color: gray;
+	border-radius: 5px;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	margin: 0 5px;
+}
+
+.button-bought,
+.button-square {
+	background-color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 5px 10px;
+	box-shadow: 2px 2px 2px lightgray;
+}
+
+.button-square {
+	background-color: red;
+	color: white;
+}
+
+.round-button-red,
+.disabled-round-button-red,
+.round-button-green {
+	background-color: red;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	padding: 10px;
+	box-shadow: 2px 2px 2px lightgray;
+}
+
+.disabled-round-button-red {
+	background-color: lightgray;
+}
+
+.round-button-green {
+	background-color: green;
+}
+
+.round-button-red:not(:disabled):hover {
+	background-color: darkred;
+}
+
+.round-button-green:not(:disabled):hover {
+	background-color: darkgreen;
+}
+
+.badge {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	width: 120px;
+	height: 30px;
+	border-radius: 0 0 10px 10px;
+	background-color: purple;
+	color: white;
+	transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+	z-index: 999;
+}
+
+.badge:hover {
+	transform: translateY(-10px);
+}
+
+.badge-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.badge-text {
+	font-weight: bold;
+}
+
+/* Printing */
+@media print {
+	.badge {
+		background-color: white;
+		color: purple;
+	}
+
+	.badge-text::before {
+		content: "Made by: ";
+	}
+
+	.badge-text::after {
+		content: attr(data-author);
+	}
 }
 
