@@ -229,26 +229,30 @@ body {
 	flex-wrap: wrap;
 	position: fixed;
 	transition: height 1s;
-	background-color: purple;
+	background-color: blue;
 }
 
 @media print {
 	.badge {
 		width: 90px;
-		height: 40px;
+		height: 50px;
 		overflow: visible;
 		border: 1px solid mediumpurple;
 		background-color: transparent;
 		color: black;
 	}
 
-	.badge-content {
+	.badge-heading {
 		display: none;
 	}
 
 	.badge-text {
 		margin-top: -5px;
 		position: absolute;
+	}
+
+	.badge-text::before {
+		content: attr(data-author);
 	}
 }
 
