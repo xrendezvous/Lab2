@@ -304,10 +304,18 @@ body {
 	bottom: 100%;
 	left: 50%;
 	transform: translateX(-50%);
-	transition: opacity 0.3s, visibility 0.3s;
+	transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+	transform-origin: bottom center;
 }
 
 [data-tooltip]:hover::before {
 	opacity: 1;
 	visibility: visible;
+	transform: translateX(-50%) scale(1);
+}
+
+[data-tooltip]:not(:hover)::before {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(-50%) scale(0.8);
 }
