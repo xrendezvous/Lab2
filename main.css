@@ -102,6 +102,16 @@ body {
 	margin-left: 15px;
 }
 
+.product-name1 {
+	margin-left: 15px;
+	margin-right: 53px;
+}
+
+.product-name2 {
+	margin-left: 15px;
+	margin-right: 82px;
+}
+
 .product-details {
 	flex: 1;
 	display: flex;
